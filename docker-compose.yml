@@ -2,17 +2,9 @@ version: '3.9'
 
 services:
   db:
-    image: postgres
-    container_name: postgres_db
+    image: mongo:4.4
     restart: always
     ports:
-      - '5532:5432'
+      - 27017:27017
     environment:
-      POSTGRES_PASSWORD: pass123
-  test-db:
-    image: postgres
-    restart: always
-    ports: 
-      - "5533:5432"
-    environment:
-      POSTGRES_PASSWORD: pass123
+      MONGODB_DATABASE: nest-course
